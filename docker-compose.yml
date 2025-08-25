@@ -1,0 +1,40 @@
+services:
+  cube:
+    image: cubejs/cube:latest
+    ports:
+      - 4000:4000
+      - 15432:15432
+    environment:
+      - CUBEJS_DEV_MODE=true
+    volumes:
+      - .:/cube/conf
+
+  metabase:
+    image: metabase/metabase
+    container_name: metabase
+    ports:
+      - "3000:3000"
+    environment:
+      MB_DB_FILE: /metabase.db
+    volumes:
+      - metabase-data:/metabase.db
+
+  rabbitmq:
+    image: rabbitmq:latest
+    hostname: rabbitmq_server
+    container_name: rabbitmq_container
+    ports:
+      - "5672:5672" # AMQP protocol port
+      - "15672:15672" # RabbitMQ Management UI port
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq/ # Persistent storage for RabbitMQ data
+      - rabbitmq_logs:/var/log/rabbitmq/ # Persistent storage for RabbitMQ logs
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    restart: unless-stopped
+
+volumes:
+  metabase-data:
+  rabbitmq_data:
+  rabbitmq_logs:
