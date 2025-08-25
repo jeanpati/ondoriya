@@ -1,1 +1,6 @@
 duckdb
+minio
+python-dotenv
+requests
+pandas
+fastparquet
