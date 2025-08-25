@@ -1,1 +1,4 @@
 duckdb
+minio
+python-dotenv
+requests
