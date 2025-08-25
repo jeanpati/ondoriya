@@ -2,8 +2,12 @@ import os
 import requests
 from dotenv import load_dotenv
 from minio import Minio
+from utils.logger import setup_logger
 
 load_dotenv()
+
+logger = setup_logger(__name__, "./logs/ingest.log")
+
 
 MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY")
 MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY")
