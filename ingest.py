@@ -50,6 +50,7 @@ def main():
         secure=False,
         http_client=http_client,
     )
+
     if not minio_client.bucket_exists(MINIO_BUCKET):
         minio_client.make_bucket(MINIO_BUCKET)
         logger.info("Created bucket: %s", MINIO_BUCKET)
