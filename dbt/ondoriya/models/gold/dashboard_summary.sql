@@ -25,4 +25,4 @@ SELECT
 FROM population_by_region pbr
 JOIN {{ ref('regions') }} r ON r.region_id = pbr.region_id
 JOIN {{ ref('faction_distribution') }} f ON f.faction = r.current_faction
-ORDER BY pbr.population_count DESC;
+ORDER BY pbr.population_count DESC
