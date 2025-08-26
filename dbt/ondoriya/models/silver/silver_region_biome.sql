@@ -8,4 +8,8 @@
     ]
 ) }}
 
-SELECT * FROM read_parquet('s3://bronze/region_biome.parquet')
+SELECT 
+"Region_ID" as region_id,
+"Full_Name" as full_name,
+"Biome" as biome
+FROM read_parquet('s3://bronze/region_biome.parquet')

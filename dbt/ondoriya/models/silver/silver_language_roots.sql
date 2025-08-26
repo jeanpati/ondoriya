@@ -8,4 +8,8 @@
     ]
 ) }}
 
-SELECT * FROM read_parquet('s3://bronze/language_roots.parquet')
+SELECT 
+    "Root" as root,
+    "Meaning" as meaning,
+    "Notes" as notes
+FROM read_parquet('s3://bronze/language_roots.parquet')

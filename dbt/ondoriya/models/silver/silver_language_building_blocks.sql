@@ -8,4 +8,11 @@
     ]
 ) }}
 
-SELECT * FROM read_parquet('s3://bronze/language_building_blocks.parquet')
+SELECT 
+    "Language_ID" as language_id,
+    "Language_Name" as language_name,
+    "Branch_From" as branch_from,
+    "Phonology_Notes" as phonology_notes,
+    "Morphology_Patterns" as morphology_patterns,
+    "Example_Roots" as example_roots
+FROM read_parquet('s3://bronze/language_building_blocks.parquet')

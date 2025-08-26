@@ -8,4 +8,8 @@
     ]
 ) }}
 
-SELECT * FROM read_parquet('s3://bronze/faction_distribution.parquet')
+SELECT 
+    "Faction" AS faction,
+    "Regions" AS regions,
+    "Percent" AS percent
+FROM read_parquet('s3://bronze/faction_distribution.parquet')
