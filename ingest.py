@@ -39,9 +39,8 @@ def main():
     Connects to MinIO, downloads files from a public URL,
     and uploads them to a MinIO bucket.
     """
-    # 1. Initialize MinIO client make sure you have a bucket you want to use.
     http_client = urllib3.PoolManager(
-        cert_reqs="CERT_NONE",  # This disables certificate validation.
+        cert_reqs="CERT_NONE",
     )
     minio_client = Minio(
         MINIO_URL,
@@ -57,11 +56,10 @@ def main():
     else:
         logger.info("Bucket %s already exists", MINIO_BUCKET)
 
-    # 2. Download Files
     for file in FILES_TO_INGEST:
         file_url = f"{BASE_URL}/{file}"
         response = requests.get(file_url, timeout=(30, 60))
-        response.raise_for_status()  # Raise an exception for bad status codes
+        response.raise_for_status()
 
         csv_dataframe = pd.read_csv(BytesIO(response.content))
         parquet_buffer = BytesIO()
@@ -72,13 +70,11 @@ def main():
         file_size = len(file_data)
         file_data_buffer = BytesIO(file_data)
 
-        # 3.  Upload the file data to MinIO
-
         minio_client.put_object(
             MINIO_BUCKET,
             file_name,
             file_data_buffer,
-            file_size,  # The object name in the bucket
+            file_size,
         )
         print(f"   -> Successfully uploaded {file_name}.")
 
