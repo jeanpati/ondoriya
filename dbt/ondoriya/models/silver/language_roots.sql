@@ -1,4 +1,4 @@
-{{ config(materialized='incremental',
+{{ config(materialized='table',
     pre_hook=[
         "SET s3_endpoint='localhost:9000'",
         "SET s3_use_ssl=false", 
@@ -8,4 +8,8 @@
     ]
 ) }}
 
-SELECT * FROM read_parquet('s3://bronze/people.parquet')
+SELECT 
+    "Root" as root,
+    "Meaning" as meaning,
+    "Notes" as notes
+FROM read_parquet('s3://bronze/language_roots.parquet')

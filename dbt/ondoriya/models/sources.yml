@@ -24,12 +24,12 @@ sources:
   - name: silver
     description: "Cleaned and transformed data"
     tables:
-      - name: silver_faction_distribution
-      - name: silver_households
-      - name: silver_language_building_blocks
-      - name: silver_language_roots
-      - name: silver_moons
-      - name: silver_people
-      - name: silver_planets
-      - name: silver_region_biome
-      - name: silver_regions
+      - name: faction_distribution
+      - name: households
+      - name: language_building_blocks
+      - name: language_roots
+      - name: moons
+      - name: people
+      - name: planets
+      - name: region_biome
+      - name: regions

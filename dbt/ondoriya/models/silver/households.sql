@@ -1,4 +1,4 @@
-{{ config(materialized='incremental',
+{{ config(materialized='table',
     pre_hook=[
         "SET s3_endpoint='localhost:9000'",
         "SET s3_use_ssl=false", 
