@@ -6,3 +6,6 @@ pandas
 fastparquet
 dbt-core
 dbt-duckdb
+streamlit
+sqlalchemy
+plotly
