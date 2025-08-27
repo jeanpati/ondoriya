@@ -1,0 +1,35 @@
+version: 2
+sources:
+  - name: bronze
+    description: "Raw data files stored in MinIO bronze bucket"
+    tables:
+      - name: faction_distribution
+        description: "Faction distribution data"
+      - name: households
+        description: "Household data"
+      - name: language_building_blocks
+        description: "Language building blocks data"
+      - name: language_roots
+        description: "Language roots data"
+      - name: moons
+        description: "Moon data"
+      - name: people
+        description: "People data"
+      - name: planets
+        description: "Planet data"
+      - name: region_biome
+        description: "Region biome data"
+      - name: regions
+        description: "Regions data"
+  - name: silver
+    description: "Cleaned and transformed data"
+    tables:
+      - name: faction_distribution
+      - name: households
+      - name: language_building_blocks
+      - name: language_roots
+      - name: moons
+      - name: people
+      - name: planets
+      - name: region_biome
+      - name: regions
