@@ -31,3 +31,9 @@ var/
 .vscode/
 
 .env
+
+.cubestore
+
+dbt/ondoriya/data/
+
+duck_dev.db

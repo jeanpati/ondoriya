@@ -1,1 +1,11 @@
 duckdb
+minio
+python-dotenv
+requests
+pandas
+fastparquet
+dbt-core
+dbt-duckdb
+streamlit
+sqlalchemy
+plotly
