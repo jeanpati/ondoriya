@@ -31,3 +31,7 @@ var/
 .vscode/
 
 .env
+
+.cubestore
+
+dbt/ondoriya/data
