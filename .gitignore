@@ -34,4 +34,6 @@ var/
 
 .cubestore
 
-dbt/ondoriya/data
+dbt/ondoriya/data/
+
+duck_dev.db
